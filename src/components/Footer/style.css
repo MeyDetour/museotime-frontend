@@ -1,0 +1,94 @@
+.footer-container{
+    padding: 18px;
+    box-sizing: border-box;
+    background : #EFEFEF;
+    width: 100%;
+    height: fit-content;
+}
+.footer{
+    position: relative;
+    height: 40vh;
+    background: #FFFFFF;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    padding: 25px 82px;
+    box-sizing: border-box;
+}
+.footer > div{
+
+
+
+    display: flex
+;
+    justify-content: end;
+    flex-direction: row;
+    gap: 85px;
+}
+
+.footer div ul {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+}
+.footer div ul h4{
+    color: black;
+}
+.footer div ul li  a {
+    color: #272727;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+
+.footer > span{
+    color: #E1E1E1;
+    color: color(display-p3 0.8817 0.8817 0.8817);
+    font-size: 146.774px;
+    font-style: normal;
+    font-weight: 800;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-family: "Inter", sans-serif;
+    line-height: 117px;
+}
+
+
+.greyFooter{
+    background: white;
+}
+.greyFooter .footer{
+   background :#EFEFEF
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .footer > span{
+        font-size: 113.774px;
+        line-height: 93px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .footer > span {
+        font-size: 83.774px;
+        line-height: 70px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .footer > span {
+        font-size: 59.774px;
+        line-height: 53px;
+    }
+    .footer{
+
+        padding: 25px 48px;
+        justify-content: space-evenly;
+    }
+}

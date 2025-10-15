@@ -1,0 +1,67 @@
+.home {
+
+    background: #EFEFEF;
+    width: 100vw;
+    padding-inline: 12%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.home h1 {
+    color: #272727;
+    color: color(display-p3 0.1548 0.1548 0.1548);
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.home p {
+    width: 60%;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+.home a {
+    width: 70%;
+}
+
+.home a img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .home {
+
+        padding-inline: 0%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .home h1 {
+        font-size: 50px;
+    }
+    .home p{
+        width: 88%;
+        font-size: 18px;
+    }.home a {
+         width: 80%;
+     }
+}
+
+
+@media screen and (max-width: 550px) {
+    .home p {
+        width: 91%;
+    }    .home a {
+             width: 90%;
+         }
+
+}

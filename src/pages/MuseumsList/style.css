@@ -1,0 +1,27 @@
+.museumsList{
+    min-height: 100vh;
+    padding-left: 38vw;
+    padding-top: 125px;
+}
+.museumsList .leftPanel{
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 50px;
+    box-sizing: border-box;
+    background: #FFF;
+    background: color(display-p3 1 1 1);
+    box-shadow: 14px 4px 31.9px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 14px 4px 31.9px 0 color(display-p3 0 0 0 / 0.05);
+    width: 35vw;
+}
+
+.museumsList .etiquettesList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}

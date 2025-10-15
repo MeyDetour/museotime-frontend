@@ -77,7 +77,7 @@ un lien apparaitra dans la console. il vous permettra d'afficher le projet dans 
 Structure du projet
 ```
 my-app/
-├─ public/ # fichiers statiques contenant le css js etc
+├─ public/ 
 ├─ src/ # code source avec toutes les pages
 │ ├─ App.jsx
 │ └─ main.jsx
