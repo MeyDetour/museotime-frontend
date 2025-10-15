@@ -1,9 +1,10 @@
-.museumsList{
+.museumsList {
     min-height: 100vh;
     padding-left: 38vw;
     padding-top: 125px;
 }
-.museumsList .leftPanel{
+
+.museumsList .leftPanel {
     position: fixed;
     height: 100vh;
     overflow-y: auto;
@@ -19,9 +20,33 @@
     width: 35vw;
 }
 
-.museumsList .etiquettesList{
+.museumsList .etiquettesList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 25px;
+}
+
+@media only screen and (max-width: 1150px) {
+
+    .museumsList .leftPanel {
+
+        position: relative;
+        width: 100%;
+        height: 410px;
+    }
+
+    .museumsList {
+
+        padding-inline: 4%;
+        display: flex;
+        gap: 52px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .museumsList .etiquettesList {
+
+        justify-content: center;
+    }
 }
