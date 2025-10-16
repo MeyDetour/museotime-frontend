@@ -1,0 +1,29 @@
+.profile {
+    padding-inline: 20vw;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.profile form{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 50px;
+}
+
+.profile form div{
+    display: flex;
+    flex-direction: column;
+    gap : 5px
+}
+.profile form div h3{
+    margin: 0;
+}
+.profile h1{
+    color: #000;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

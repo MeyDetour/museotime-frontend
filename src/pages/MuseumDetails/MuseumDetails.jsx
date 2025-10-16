@@ -31,9 +31,12 @@ export default function MuseumDetails() {
 
         }
 
+
+
         if (!museum) {
             getData()
         }
+
     }, [])
 
     async function dislikeMuseum() {

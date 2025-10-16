@@ -1,24 +1,27 @@
 import "./style.css"
-import {Link} from "react-router";
+import {Link, useLocation} from "react-router";
+import {useEffect, useState} from "react";
 
 export default function Footer() {
-    const pathname =window.location.pathname
-    if (pathname.startsWith( "/registerLoginPage") ){
-        return null
-    }
+    const location = useLocation(); // réactif
+    const [additionalClass, setAdditionalClass] = useState("");
 
-    let additionnalClass = ""
-    switch (pathname) {
-        case "/museums":
-            additionnalClass = "museumFooter";
-            break;
-        case pathname.startsWith("/museum/"):
-            additionnalClass = "greyFooter";
-            break;
-    }
+    useEffect(() => {
+        const pathname = location.pathname;
+
+        if (pathname === "/museums") {
+            setAdditionalClass("museumFooter");
+        } else if (pathname.startsWith("/museum/")) {
+            setAdditionalClass("greyFooter");
+        } else if (pathname.startsWith("/registerLoginPage")) {
+            setAdditionalClass("registerLoginFooter");
+        } else {
+            setAdditionalClass("");
+        }
+    }, [location.pathname]);
 
 
-    return <footer className={"footer-container "+additionnalClass}>
+    return <footer className={"footer-container "+additionalClass}>
         <div className="footer">
 
 

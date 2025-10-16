@@ -9,10 +9,6 @@ export default function LoginForm() {
     const {
         register,
         handleSubmit,
-
-        reset,
-        formState,
-        formState: {isSubmitSuccessful},
     } = useForm({
         defaultValues: {}
     })
