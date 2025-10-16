@@ -1,0 +1,38 @@
+.loginRegisterForm {
+
+    border-radius: 10px;
+    background: rgba(106, 106, 106, 0.10);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+
+    width: 29vw;
+    height: 69vh;
+    z-index: 12;
+    border: 1px solid #d0d0d0;
+}
+
+.loginRegisterForm > div {
+    width: 80%;
+    text-align: center;
+}
+
+.loginRegisterForm > div input {
+    width: 100%;
+    text-align: center;border-radius: 5px;
+    background: #FFF;
+    outline: none;
+    border: none;
+    padding-block: 10px;
+    font-size: 18px;
+}
+.loginRegisterForm> a {
+    color: black;
+}

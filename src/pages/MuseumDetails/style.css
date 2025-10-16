@@ -90,7 +90,18 @@
     background: linear-gradient(0deg, #ffffff 0%, #ffffff00 100%);
 }
 
-.museumDetails .rightData .iconContainer{
+.museumDetails .rightData .imgContainer .favoriteListContainer{
+    display: flex
+;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 150px;
+    background: white;
+    padding: 10px;
+}
+.museumDetails .rightData .iconContainer {
     position: absolute;
     right: 13px;
     top: 15px;
@@ -98,6 +109,58 @@
     flex-direction: row;
     gap: 10px;
 }
+
+.museumDetails .rightData .iconContainer #svgHeart {
+    width: 25px;
+    height: 25px;
+    background-image: url("/icon/heart-white.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.museumDetails .rightData .iconContainer #svgHeart.liked {
+    background-image: url("/icon/heart-red-fill.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.museumDetails .rightData .iconContainer #svgHeart:hover {
+    background-image: url("/icon/heart-white-fill.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.museumDetails .rightData .iconContainer #share {
+    width: 25px;
+    height: 25px;
+    background-image: url("/icon/share.svg");
+    background-size: contain;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.museumDetails .rightData .iconContainer #share:hover {
+    background-image: url("/icon/share-fill.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.museumDetails .rightData .iconContainer #close {
+    width: 25px;
+    height: 25px;
+    background-image: url("/icon/close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.museumDetails .rightData .iconContainer #close:hover {
+
+    background-image: url("/icon/close-sm.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
 .museumDetails .rightData .imgContainer img {
     height: 100%;
     width: 100%;

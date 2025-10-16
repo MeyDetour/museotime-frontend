@@ -2,7 +2,6 @@
 import './App.css'
 import {Route, Routes} from "react-router";
 import Home from "./pages/Home/Home.jsx";
-import RegisterLoginPage from "./pages/RegisterLoginPage/RegisterLoginPage.jsx";
 import Header from "./components/Header/Header.jsx";
 import MuseumsList from "./pages/MuseumsList/MuseumsList.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
@@ -12,6 +11,8 @@ import RegisterForm from "./components/RegisterForm/RegisterForm.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import MuseumDetails from "./pages/MuseumDetails/MuseumDetails.jsx";
 import {UserProvider} from "./context/UserProvider.jsx";
+import RegisterLoginBase from "./pages/RegisterLoginBase/RegisterLoginBase.jsx";
+import RegisterLoginBouttons from "./components/RegisterLoginBouttons/RegisterLoginBouttons.jsx";
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
         <Routes>
             <Route index element={<Home />} />
 
-            <Route path={"registerLoginPage"} element={<RegisterLoginPage />}>
-                <Route index></Route>
+            <Route path={"registerLoginPage"} element={<RegisterLoginBase />}>
+                <Route index element={<RegisterLoginBouttons></RegisterLoginBouttons>}></Route>
                 <Route path="login" element={<LoginForm />} />
                 <Route path="register" element={<RegisterForm />} />
             </Route>

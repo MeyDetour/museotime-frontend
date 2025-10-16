@@ -1,0 +1,49 @@
+
+
+.registerLoginBase .buttonContainer{
+    display: flex
+;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 109px;
+    gap: 69px;
+}
+.registerLoginBase .buttonContainer a{
+    text-decoration: none;
+
+    outline: 0;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    width: 447px;
+    height: 147px;
+    border: 1px solid #f1f1f1;
+    display: flex
+;
+    flex-direction: row;
+    justify-content: start;
+    align-items: end;
+    padding: 13px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    }
+
+.registerLoginBase .buttonContainer button:hover {
+
+    background: #FcfcFc;
+}
+.registerLoginBase .buttonContainer svg{
+   position: absolute;
+    top: -35px;
+    right: 41px;
+}
+
+.registerLoginBase .buttonContainer span {
+    color: #000;
+    color: color(display-p3 0 0 0);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}

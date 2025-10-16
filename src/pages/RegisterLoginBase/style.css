@@ -1,0 +1,18 @@
+.registerLoginBase{
+    height: 100vh;
+    box-sizing: border-box;
+}
+.registerLoginBase > span{
+
+    color: color(display-p3 0.8817 0.8817 0.8817);
+    font-size: 302.619px;
+    font-style: normal;
+    font-weight: 800;
+
+    line-height: 213px;
+    position: fixed;
+    bottom: 15px;
+    box-sizing: border-box;
+    left: 0;
+    z-index: 2;
+}

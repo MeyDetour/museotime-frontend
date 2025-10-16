@@ -2,6 +2,7 @@ import "./style.css"
 import {useEffect, useState} from "react";
 import MuseumEtiquette from "../../components/museumEtiquette/museumEtiquette.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
+import {useUser} from "../../context/UserProvider.jsx";
 
 export default function MuseumsList() {
     const [museums, setMuseums] = useState([])
@@ -9,7 +10,7 @@ export default function MuseumsList() {
     useEffect(() => {
         async function getData() {
 
-            let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "museums"+(limit&&"?limit="+limit), {})
+            let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "museums" + (limit && "?limit=" + limit), {})
             if (!jsonResponse.ok) {
                 throw new Error(`Response status: ${jsonResponse.status}`);
             }
@@ -20,8 +21,10 @@ export default function MuseumsList() {
 
 
         }
- getData();
+
+        getData();
     }, [limit])
+
 
     return <div className={"museumsList page"}>
         <div className="leftPanel">
@@ -56,7 +59,7 @@ export default function MuseumsList() {
                 <MuseumEtiquette museum={museum} key={index}></MuseumEtiquette>
             ))}
         </div>
-        {limit < 101 && <button onClick={()=>{setLimit(prev=>prev+20)}}>Voir plus</button>}
+        {limit < 101 && <button className={"button"} onClick={()=>{setLimit(prev=>prev+20)}}>Voir plus</button>}
 
 
     </div>;

@@ -13,3 +13,17 @@ body{
 
     min-height: 100vh;
 }
+
+
+.button{
+    border: 1px solid black;
+    background: transparent;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.button:hover{
+   background: black;
+    color: white;
+
+}

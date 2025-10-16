@@ -3,6 +3,9 @@ import {Link} from "react-router";
 
 export default function Footer() {
     const pathname =window.location.pathname
+    if (pathname.startsWith( "/registerLoginPage") ){
+        return null
+    }
 
     let additionnalClass = ""
     switch (pathname) {
@@ -10,9 +13,10 @@ export default function Footer() {
             additionnalClass = "museumFooter";
             break;
         case pathname.startsWith("/museum/"):
-            additionnalClass = "museumFooter";
+            additionnalClass = "greyFooter";
             break;
     }
+
 
     return <footer className={"footer-container "+additionnalClass}>
         <div className="footer">
