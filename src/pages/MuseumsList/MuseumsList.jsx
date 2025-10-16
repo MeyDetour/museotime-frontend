@@ -18,10 +18,7 @@ export default function MuseumsList() {
             const result = await jsonResponse.json();
             setMuseums(result);
             console.log(result);
-
-
         }
-
         getData();
     }, [limit])
 

@@ -91,23 +91,33 @@
 }
 
 .museumDetails .rightData .imgContainer .favoriteListContainer{
-    display: flex
-;
+
+    display: flex;
     flex-direction: column;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 97px;
+    top: 43px;
     min-width: 150px;
     background: white;
     padding: 10px;
+    text-align: center;
 }
+
+.museumDetails .rightData .imgContainer .favoriteListContainer span{
+
+    cursor: pointer;
+}
+.museumDetails .rightData .imgContainer .favoriteListContainer span:hover{
+    font-weight: bold;
+}
+
 .museumDetails .rightData .iconContainer {
     position: absolute;
     right: 13px;
     top: 15px;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
 }
 
 .museumDetails .rightData .iconContainer #svgHeart {
