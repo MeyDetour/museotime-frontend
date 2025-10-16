@@ -19,6 +19,13 @@ export default function LoginForm() {
     const [error, setError] = useState(null);
     const {token, setToken,deleteToken} = useUser();
     const onSubmit = async (data) => {
+        if (!data.username){
+            setError("Please enter your username");
+            return
+        } if (!data.password){
+            setError("Please enter your password");
+            return
+        }
         console.log(data);
 
         let jsonResponse = await fetch("https://localhost:8000/api/login_check", {

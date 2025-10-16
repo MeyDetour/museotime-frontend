@@ -60,18 +60,32 @@
     line-height: normal;
 }
 .shareWidget .widget >div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     width: 100%;
     padding: 8px 10px;
     border-radius: 3px;
     background: #F9F9F9;
+    box-sizing: border-box;
     background: color(display-p3 0.9779 0.9779 0.9779);
 }
+.shareWidget .widget >div button{
 
-.shareWidget .widget >div:hover span{
-    font-weight: bold;
+    background: white;
+    outline: 0;
+    padding: 8px 25px;    border: 1px solid #e3e3e3;
 }
 
+.shareWidget .widget >div button.green{
+    background: #c6ffc6;
+
+}
+.shareWidget .widget div button:not(.green):hover{
+    background :#f5f5f5;
+}
 
 
 

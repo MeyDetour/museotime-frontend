@@ -2,9 +2,11 @@ import "./style.css"
 import {useState} from "react";
 import {useUser} from "../../context/UserProvider.jsx";
 
-export default function ShareWidget({setShare}) {
+export default function ShareWidget({setShare, museumId}) {
     const [copied, setCopied] = useState(false);
     const [searchResult, setSearchResult] = useState(null);
+    const [shared, setShared] = useState([]);
+    const [error, setError] = useState(null);
     const {token, deleteToken} = useUser()
 
     function copy() {
@@ -19,7 +21,7 @@ export default function ShareWidget({setShare}) {
         )
     }
 
-    async function shareUser(event) {
+    async function searchUser(event) {
         let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "api/user/search?search=" + event.target.value, {
             method: "GET", headers: {
                 "Content-Type": "application/json", "Authorization": `Bearer ${token}`
@@ -32,13 +34,34 @@ export default function ShareWidget({setShare}) {
 
         const result = await jsonResponse.json();
         setSearchResult(result);
-        console.log(result);
-
-
-        console.log("Recherche :", event.target.value);
     }
 
-    console.log("state : ",searchResult)
+    async function shareWithUser(userId) {
+        let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "api/share/museum/to/user/" + userId, {
+            method: "POST",
+            body: JSON.stringify({"museumId": museumId}),
+            headers: {
+                "Content-Type": "application/json", "Authorization": `Bearer ${token}`
+            }
+        })
+        if (jsonResponse.status === 401) {
+            deleteToken()
+            window.location.href = "/registerLoginPage/login";
+        }
+
+        const result = await jsonResponse.json();
+        if (result.message === "ok") {
+            setShared(prev =>[...prev,userId] )
+            setError(null)
+        } else {
+            setError("failed to share")
+        }
+
+
+    }
+
+    console.log(shared)
+
 
     return <div className={"shareWidget "}>
         <div className={"widget"}>
@@ -50,10 +73,17 @@ export default function ShareWidget({setShare}) {
             </svg>
 
             <h1>Partager</h1>
-            <input type="text" placeholder="Seach user" onChange={shareUser}/>
-            {searchResult && searchResult.length > 0 && searchResult.map((item,index) => (
+            {error && <span style={{color: 'red'}}>{error}</span>}
+            <input type="text" placeholder="Seach user" onChange={searchUser}/>
+            {searchResult && searchResult.length > 0 && searchResult.map((item, index) => (
                 <div key={index}>
                     <span>{item.username}</span>
+                    {shared && shared.length> 0 && shared.includes(item.id) ?
+                        <button className={"green"}>Partagé</button>
+                    :
+                        <button onClick={()=>shareWithUser(item.id)}>Partager</button>
+                    }
+
                 </div>
             ))
             }

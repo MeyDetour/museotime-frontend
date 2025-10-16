@@ -126,7 +126,7 @@ export default function MuseumDetails() {
             :
 
             <>
-            {wantToShare && <ShareWidget setShare={setWantToShare} musem={museum}></ShareWidget> }
+            {wantToShare && <ShareWidget setShare={setWantToShare} musem={museum} museumId={museum.identifiant}></ShareWidget> }
 
             <div className="leftData">
                 <div className="container ">

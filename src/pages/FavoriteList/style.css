@@ -1,0 +1,78 @@
+.favoriteList {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0;
+
+
+    .left {
+        display: flex;
+        width: 70vw;
+        padding: 104px 30px;
+        flex-direction: column;
+        background: #FFF;
+        background: color(display-p3 1 1 1);
+        box-shadow: 14px 4px 31.9px 0 rgba(0, 0, 0, 0.05);
+        gap: 25px;
+
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            gap: 10px;
+
+            .edit{
+                margin-top: 20px;
+            }
+        }
+
+        details {
+            marker: none;
+            background: #FCFCFC;
+            background: color(display-p3 0.9894 0.9894 0.9894);
+            box-shadow: 0 0 9.3px 0 rgba(0, 0, 0, 0.10);
+
+            width: 96%;
+            background: #ffffff;
+            cursor: pointer;
+
+        }
+
+        summary {
+            list-style: none;
+            padding: 25px 20px;
+            box-sizing: border-box;
+            position: relative;
+
+            .icon{
+                position: absolute;
+                right: 20px;
+            }
+
+        }
+    }
+
+    .right {
+
+        padding-block: 104px;
+        padding-inline: 37px;
+
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+
+
+        .museumEtiquette {
+            width: 47%;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+}

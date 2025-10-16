@@ -1,5 +1,5 @@
 .museumEtiquette {
-     width: 29%;
+    width: 29%;
     display: flex;
     flex-direction: column;
     background: white;
@@ -7,8 +7,10 @@
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 13.2px 0 color(display-p3 0 0 0 / 0.16);
-text-decoration: none;
+    text-decoration: none;
 }
+
+
 
 .museumEtiquette img {
     border-radius: 8px 8px 0 0;
@@ -16,10 +18,24 @@ text-decoration: none;
     object-fit: cover;
 }
 
-.museumEtiquette h4{
-    margin: 0;     padding: 10px;
+.museumEtiquette h4 {
+    margin: 0;
+    padding: 10px;
     text-transform: capitalize;
     text-decoration: none;
     color: black;
 
+}
+.museumEtiquette span{
+    color: #363636;
+    padding: 10px;
+}
+.museumEtiquette #iconDelete{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 21px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    z-index: 3;
 }
