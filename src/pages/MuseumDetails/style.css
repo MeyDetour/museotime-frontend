@@ -1,0 +1,204 @@
+.museumDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline: 36px 0;
+    box-sizing: border-box;
+    padding-top: 8vh;
+}
+
+.museumDetails .leftData {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 38vw;
+    z-index: 2;
+    margin-top: -4vh;
+    margin-right: -32px;
+}
+
+.museumDetails .leftData .container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 29px 30px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+    border-radius: 6px;
+    background: #FFF;
+    background: color(display-p3 1 1 1);
+    box-shadow: 0 0 31.9px 0 rgba(0, 0, 0, 0.14);
+}
+
+.museumDetails .leftData .container h3 {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    line-height: normal;
+}
+
+.museumDetails .leftData .container:first-child {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.museumDetails .leftData .container:first-child .elt {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.museumDetails .leftData .container:first-child .elt h3 {
+    margin: 0;
+}
+
+
+.museumDetails .leftData .container .wrapList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.museumDetails .rightData {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.museumDetails .rightData .imgContainer {
+    position: relative;
+}
+
+.museumDetails .rightData .imgContainer::before {
+    content: "";
+    position: absolute;
+
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(0deg, #ffffff 0%, #ffffff00 100%);
+}
+
+.museumDetails .rightData .imgContainer img {
+    height: 100%;
+    width: 100%;
+}
+
+.museumDetails .rightData .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 83px 40px;
+    margin-top: -55px;
+    z-index: 2;
+
+}
+
+.museumDetails .rightData .content h1 {
+    color: #000;
+    color: color(display-p3 0 0 0);
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+
+.museumDetails .rightData .content .rowMap {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+}
+
+.museumDetails .rightData .content .rowMap .map-container {
+    height: 400px;
+    width: 59%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.museumDetails .rightData .content .rowMap .data {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+
+.museumDetails .rightData .content .rowMap .data .grey {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border-radius: 9px;
+    background: #BFBFBF;
+    background: color(display-p3 0.751 0.751 0.751);
+    color: #fff;
+    text-decoration: none;
+    height: 37px;
+    padding: 2px 10px;
+    gap: 10px;
+}
+
+.museumDetails .rightData .content .rowMap .data .grey:hover {
+    background: #cac9c9;
+}
+
+
+@media screen  and (max-width: 1050px) {
+    .museumDetails {
+        flex-direction: column-reverse;
+        padding-inline: 0;
+    }
+
+    .museumDetails .leftData {
+        margin: 0;
+        padding-inline: 80px;
+        padding-block: 52px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .museumDetails .rightData .imgContainer, .museumDetails .rightData .imgContainer img {
+        max-height: 57vh;
+    }
+
+    .museumDetails .rightData {
+        width: 100vw;
+    }
+
+    .museumDetails .rightData .content {
+        padding-inline: 80px;
+
+    }
+}
+
+@media screen  and (max-width: 800px) {
+    .museumDetails .rightData .content,
+    .museumDetails .leftData {
+        padding-inline: 35px;
+    }
+
+    .museumDetails .rightData .content .rowMap {
+        flex-direction: column;
+    }
+
+    .museumDetails .rightData .content .rowMap .map-container {
+        height: 343px;
+        width: 100%;
+    }
+}

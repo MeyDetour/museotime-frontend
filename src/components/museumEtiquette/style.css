@@ -7,7 +7,7 @@
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 13.2px 0 color(display-p3 0 0 0 / 0.16);
-
+text-decoration: none;
 }
 
 .museumEtiquette img {
@@ -19,5 +19,7 @@
 .museumEtiquette h4{
     margin: 0;     padding: 10px;
     text-transform: capitalize;
+    text-decoration: none;
+    color: black;
 
 }

@@ -1,11 +1,12 @@
-.footer-container{
+.footer-container {
     padding: 18px;
     box-sizing: border-box;
-    background : #EFEFEF;
+    background: #EFEFEF;
     width: 100%;
     height: fit-content;
 }
-.footer{
+
+.footer {
     position: relative;
     height: 40vh;
     background: #FFFFFF;
@@ -16,12 +17,11 @@
     padding: 25px 82px;
     box-sizing: border-box;
 }
-.footer > div{
+
+.footer > div {
 
 
-
-    display: flex
-;
+    display: flex;
     justify-content: end;
     flex-direction: row;
     gap: 85px;
@@ -34,10 +34,12 @@
     padding: 0;
     list-style-type: none;
 }
-.footer div ul h4{
+
+.footer div ul h4 {
     color: black;
 }
-.footer div ul li  a {
+
+.footer div ul li a {
     color: #272727;
     margin: 0;
     padding: 0;
@@ -45,7 +47,7 @@
 
 }
 
-.footer > span{
+.footer > span {
     color: #E1E1E1;
     color: color(display-p3 0.8817 0.8817 0.8817);
     font-size: 146.774px;
@@ -59,19 +61,28 @@
 }
 
 
-.greyFooter{
+.museumFooter {
+
     background: white;
-}
-.greyFooter .footer{
-   background :#EFEFEF
+    padding-left: 36vw;
 }
 
+.museumFooter .footer {
+    background: #EFEFEF;
+    border-radius: 10px;
+}
 
 
 @media screen and (max-width: 1200px) {
-    .footer > span{
+    .footer > span {
         font-size: 113.774px;
         line-height: 93px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .museumFooter {
+        padding: 18px;
     }
 }
 
@@ -81,12 +92,14 @@
         line-height: 70px;
     }
 }
+
 @media screen and (max-width: 550px) {
     .footer > span {
         font-size: 59.774px;
         line-height: 53px;
     }
-    .footer{
+
+    .footer {
 
         padding: 25px 48px;
         justify-content: space-evenly;

@@ -1,39 +1,39 @@
 import "./style.css"
 import {useEffect, useState} from "react";
 import MuseumEtiquette from "../../components/museumEtiquette/museumEtiquette.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 export default function MuseumsList() {
     const [museums, setMuseums] = useState([])
+    const [limit, setLimit] = useState(20)
     useEffect(() => {
         async function getData() {
 
-            let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "museums", {})
+            let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "museums"+(limit&&"?limit="+limit), {})
             if (!jsonResponse.ok) {
                 throw new Error(`Response status: ${jsonResponse.status}`);
             }
 
             const result = await jsonResponse.json();
             setMuseums(result);
+            console.log(result);
 
 
         }
-
-        if (museums.length === 0) {
-            getData()
-        }
-    }, [])
+ getData();
+    }, [limit])
 
     return <div className={"museumsList page"}>
         <div className="leftPanel">
             <h1>Répertoire des Musées de France : base Muséofile</h1>
             <h3>Filtrer par...</h3>
-            <div>
-                <h4>Localisation</h4>
-                <div className={"inputCheckbox"}>
-                    <input type="checkbox"/>
-                    <span>Près de chez moi</span>
-                </div>
-            </div>
+            {/*<div>*/}
+            {/*    <h4>Localisation</h4>*/}
+            {/*    <div className={"inputCheckbox"}>*/}
+            {/*        <input type="checkbox"/>*/}
+            {/*        <span>Près de chez moi</span>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div>
                 <h4>Protection</h4>
                 <div className={"inputContainer"}>
@@ -56,6 +56,8 @@ export default function MuseumsList() {
                 <MuseumEtiquette museum={museum} key={index}></MuseumEtiquette>
             ))}
         </div>
+        {limit < 101 && <button onClick={()=>{setLimit(prev=>prev+20)}}>Voir plus</button>}
+
 
     </div>;
 }

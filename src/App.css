@@ -10,4 +10,6 @@ body{
 
 .page{
     padding-block: 161px;
+
+    min-height: 100vh;
 }

@@ -10,11 +10,16 @@ import FavoriteList from "./pages/FavoriteList/FavoriteList.jsx";
 import LoginForm from "./components/LoginForm/LoginForm.jsx";
 import RegisterForm from "./components/RegisterForm/RegisterForm.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import MuseumDetails from "./pages/MuseumDetails/MuseumDetails.jsx";
+import {UserProvider} from "./context/UserProvider.jsx";
 
 function App() {
 
   return (
     <>
+        <UserProvider>
+
+
         <Header></Header>
         <Routes>
             <Route index element={<Home />} />
@@ -26,13 +31,14 @@ function App() {
             </Route>
 
                 <Route path={"museums"} element={<MuseumsList />} />
-                <Route path={"museum/:id"} element={<MuseumsList />} />
+                <Route path={"museum/:id"} element={<MuseumDetails />} />
                 <Route path={"profil"} element={<Profile />} />
                 <Route path={"favoriteList"} element={<FavoriteList />} />
                 <Route path={"mentionslegales"} element={<FavoriteList />} />
 
         </Routes>
         <Footer></Footer>
+        </UserProvider>
     </>
   )
 }

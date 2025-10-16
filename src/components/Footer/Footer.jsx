@@ -7,12 +7,13 @@ export default function Footer() {
     let additionnalClass = ""
     switch (pathname) {
         case "/museums":
-            additionnalClass = "greyFooter";
+            additionnalClass = "museumFooter";
+            break;
+        case pathname.startsWith("/museum/"):
+            additionnalClass = "museumFooter";
             break;
     }
-    if (pathname === "/museums") {
-        return null
-    }
+
     return <footer className={"footer-container "+additionnalClass}>
         <div className="footer">
 
