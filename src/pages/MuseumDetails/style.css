@@ -90,6 +90,14 @@
     background: linear-gradient(0deg, #ffffff 0%, #ffffff00 100%);
 }
 
+.museumDetails .rightData .iconContainer{
+    position: absolute;
+    right: 13px;
+    top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 .museumDetails .rightData .imgContainer img {
     height: 100%;
     width: 100%;
