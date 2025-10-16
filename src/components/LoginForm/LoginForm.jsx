@@ -24,7 +24,7 @@ export default function LoginForm() {
         }
         console.log(data);
 
-        let jsonResponse = await fetch("https://localhost:8000/api/login_check", {
+        let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE+"api/login_check", {
             method: "POST",
             body: JSON.stringify(data), headers: {
                 "Content-Type": "application/json"

@@ -26,7 +26,7 @@ export default function Profile() {
             return
         }
 
-        let jsonResponse = await fetch("https://localhost:8000/api/user/edit/me", {
+        let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE+"api/user/edit/me", {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
