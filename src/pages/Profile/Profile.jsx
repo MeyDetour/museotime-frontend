@@ -68,6 +68,10 @@ export default function Profile() {
 
 
         </form>
+
+
         <p>Conformément à son droit à l'effacement, l'utilisateur peut demander la suppression de son compte et de toutes ses données personnelles associées. Toutefois, les éléments qu'il a partagés seront conservés pour assurer la cohérence de la plateforme, mais son nom d'utilisateur sera remplacé par un profil générique  "Utilisateur supprimé". <u>Supprimer mon compte</u></p>
+
+    <button onClick={()=>deleteToken}>Disconnect</button>
     </div>;
 }
