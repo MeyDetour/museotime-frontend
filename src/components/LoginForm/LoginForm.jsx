@@ -13,18 +13,26 @@ export default function LoginForm() {
         defaultValues: {}
     })
     const [error, setError] = useState(null);
-    const {token, setToken,deleteToken} = useUser();
+    const {token, setToken, deleteToken} = useUser();
+
+
+
     const onSubmit = async (data) => {
-        if (!data.username){
+
+        //check inputs
+
+        if (!data.username) {
             setError("Please enter your username");
             return
-        } if (!data.password){
+        }
+        if (!data.password) {
             setError("Please enter your password");
             return
         }
-        console.log(data);
 
-        let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE+"api/login_check", {
+
+        // send request
+        let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "api/login_check", {
             method: "POST",
             body: JSON.stringify(data), headers: {
                 "Content-Type": "application/json"
@@ -38,11 +46,12 @@ export default function LoginForm() {
 
         const result = await jsonResponse.json();
         if (!result.token) {
-            console.log(result);
+            //render error
             setError(result);
 
         } else {
-            console.log(result.token)
+
+            //login
             setToken(result.token);
             window.location.href = "/museums";
         }

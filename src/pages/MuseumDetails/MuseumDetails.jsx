@@ -120,7 +120,6 @@ export default function MuseumDetails() {
         }
     }
 
-    console.log(user)
 
     return <div className={"museumDetails page"}>
 
@@ -129,8 +128,12 @@ export default function MuseumDetails() {
             :
 
             <>
+
+            {/*   Widget de partage  */}
             {wantToShare && <ShareWidget setShare={setWantToShare} musem={museum} museumId={museum.identifiant}></ShareWidget> }
 
+
+            {/* Liste des donénes se trouvant à gauche dans l'interface   */}
             <div className="leftData">
                 <div className="container ">
                     {museum.region && museum.region != "" && <div className="elt">
@@ -184,6 +187,9 @@ export default function MuseumDetails() {
                 </div>}
 
             </div>
+
+
+            {/*  Données à droite  */}
             <div className="rightData">
 
                 {/* IMAGE */}

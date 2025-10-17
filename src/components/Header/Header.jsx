@@ -5,10 +5,12 @@ import {useUser} from "../../context/UserProvider.jsx";
 export default function Header() {
     const pathname = window.location.pathname
     const {user} = useUser()
-    console.log(pathname)
     return <div className={"header "}>
         <ul>
             <li className={pathname.startsWith("/museum") ? "focus" : ""}><Link to={"museums"}>Museums</Link></li>
+
+
+
             {user ?
                 <>
                     <li className={pathname === "favoriteList" ? "focus" : ""}><Link to={"favoriteList"}>Favorites
@@ -20,6 +22,7 @@ export default function Header() {
                 :
                 <li className={pathname === "registerLoginPage" ? "focus" : ""}><Link to={"registerLoginPage"}>Login</Link></li>
             }
+
         </ul>
     </div>
         ;

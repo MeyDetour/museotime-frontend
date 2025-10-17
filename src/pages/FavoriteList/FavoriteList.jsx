@@ -9,6 +9,9 @@ export default function FavoriteList() {
     const [shareWithMe, setShareWithMe] = useState(null)
     const [idOfListForinputToEdit, setIdOfListForinputToEdit] = useState(null)
     const {token, deleteToken} = useUser()
+
+
+
     useEffect(() => {
         async function getFavoritesList() {
             let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "api/favorite/list/get/all", {
@@ -102,7 +105,9 @@ export default function FavoriteList() {
 
     async function submit(id) {
         const itemToSave = list.find(item => item.id === id);
-        console.log("Valider :", itemToSave.name);
+
+
+
         let jsonResponse = await fetch(import.meta.env.VITE_URL_BASE + "api/favorite/list/edit/" + id, {
             method: "PUT",
             body: JSON.stringify({"name": itemToSave.name})
@@ -126,13 +131,21 @@ export default function FavoriteList() {
 
 
     return <div className={"favoriteList page "}>
+
+        {/* List des favoris */}
         <div className="left">
             <h1>Favorit list</h1>
 
+
+
             {list && list.length > 0 && list.map((itemList, index) => (
                 <div key={index} className="row">
+
+
                     <details>
                         <summary>
+
+                            {/* Render input to edit favorite name */}
                             {idOfListForinputToEdit === itemList.id ? (
                                 <input
                                     key={itemList.id}
@@ -148,7 +161,7 @@ export default function FavoriteList() {
                                 itemList.name
                             )}
 
-
+                            {/* icon fleche */}
                             <svg className={"icon"} width="20" height="16" viewBox="0 0 20 16" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -156,6 +169,8 @@ export default function FavoriteList() {
                                     fill="black" style={{fill: 'black', fillOpacity: 1}}/>
                             </svg>
                         </summary>
+
+                        {/* list of museums */}
                         <div className={"wrapper"}>
                             {itemList.museums.length === 0 && <span>No museum here !</span>}
                             {itemList.museums.map((museum, index) => (
@@ -166,19 +181,27 @@ export default function FavoriteList() {
 
 
                     </details>
+
+
+                    {/* Boutton to edit */}
                     <svg className={"edit"} onClick={() => {
-                        setIdOfListForinputToEdit(item.id)
+                        setIdOfListForinputToEdit(itemList.id)
                     }} width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M1 15.5H2.098L12.796 4.802L11.698 3.704L1 14.402V15.5ZM0.808004 16.5C0.579338 16.5 0.387338 16.4227 0.232004 16.268C0.0766708 16.1133 -0.000662393 15.9213 4.27351e-06 15.692V14.652C4.27351e-06 14.4307 0.0433377 14.22 0.130004 14.02C0.216671 13.82 0.333004 13.6473 0.479004 13.502L13.18 0.787C13.282 0.695667 13.395 0.625 13.519 0.575C13.643 0.525 13.7723 0.5 13.907 0.5C14.0417 0.5 14.1717 0.521333 14.297 0.564C14.4223 0.606667 14.539 0.682666 14.647 0.792L15.714 1.866C15.824 1.972 15.8993 2.08867 15.94 2.216C15.98 2.34267 16 2.46933 16 2.596C16 2.732 15.9773 2.862 15.932 2.986C15.886 3.10933 15.8133 3.22233 15.714 3.325L2.998 16.021C2.85334 16.1663 2.68067 16.2823 2.48 16.369C2.27934 16.4557 2.06867 16.4993 1.848 16.5H0.808004ZM12.238 4.262L11.698 3.704L12.796 4.802L12.238 4.262Z"
                             fill="black" style={{fill: 'black', fillOpacity: 1}}/>
                     </svg>
+
+
                 </div>
 
 
             ))}
 
         </div>
+
+
+        {/* Liste des musées partagé avec moi */}
         <div className="right">
             <h1>Shared with me</h1>
             <div className={"wrapper"}>

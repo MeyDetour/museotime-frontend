@@ -16,6 +16,8 @@ export default function RegisterForm(props) {
         defaultValues: {}
     })
     const [error, setError] = useState(null);
+
+
     const onSubmit = async (data) => {
         console.log(data);
 

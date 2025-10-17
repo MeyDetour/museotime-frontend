@@ -64,7 +64,11 @@ export default function ShareWidget({setShare, museumId}) {
 
 
     return <div className={"shareWidget "}>
+
+        {/* Share section */}
         <div className={"widget"}>
+
+            {/* croix pour fermé */}
             <svg onClick={() => setShare(false)} className={"close"} width="19" height="19" viewBox="0 0 19 19"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -72,9 +76,15 @@ export default function ShareWidget({setShare, museumId}) {
                     fill="black" style={{fill: 'black', fillOpacity: 1}}/>
             </svg>
 
+
             <h1>Partager</h1>
+
+
+
             {error && <span style={{color: 'red'}}>{error}</span>}
             <input type="text" placeholder="Seach user" onChange={searchUser}/>
+
+            {/* Lsite des utilisateurs trouvés */}
             {searchResult && searchResult.length > 0 && searchResult.map((item, index) => (
                 <div key={index}>
                     <span>{item.username}</span>
@@ -89,6 +99,10 @@ export default function ShareWidget({setShare, museumId}) {
             }
 
         </div>
+
+
+        {/* Copy link section*/}
+
         <div className={"widget2"}>
             <h1>Copier le lien</h1>
             <div>

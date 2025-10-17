@@ -111,6 +111,8 @@ export default function MuseumsList() {
             {/*</div>*/}
 
 
+
+            {/* Ajoute tous les filtres pour domaine thematique etc */}
             {filters && Object.keys(filters).length > 0 &&
                 <div>
                     {[ "domaine_thematique", "themes","annee_creation", "departement"].map((category) => (
@@ -122,6 +124,9 @@ export default function MuseumsList() {
                                 {category === "departement" && "Département"}
                             </h4>
 
+
+
+                            {/* Gere la quantité d'elements ajoutés */}
                             {limit[category] === filters[category].length ?
                                 <span className={"btn"}
                                     onClick={() => setLimit(prev => ({
@@ -143,6 +148,7 @@ export default function MuseumsList() {
                             }
 
 
+                            {/* List des elements*/}
                             <div className="wrapper">
                                 {filters[category].map((item, i) => (
                                     limit[category] > i && (
